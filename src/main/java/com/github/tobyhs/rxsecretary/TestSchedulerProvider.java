@@ -18,4 +18,12 @@ public class TestSchedulerProvider implements SchedulerProvider {
     public TestScheduler ui() {
         return uiScheduler;
     }
+
+    /**
+     * Triggers actions on all of this provider's test schedulers
+     */
+    public void triggerActions() {
+        ioScheduler.triggerActions();
+        uiScheduler.triggerActions();
+    }
 }
