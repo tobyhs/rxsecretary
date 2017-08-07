@@ -2,6 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 group = 'com.github.tobyhs'
+version = '0.0.1'
 
 repositories {
     jcenter()
