@@ -24,7 +24,7 @@ public class TestSchedulerProviderTest {
 
     @Test
     public void triggerActions() {
-        StringBuffer buffer = new StringBuffer();
+        final StringBuffer buffer = new StringBuffer();
 
         Completable.fromAction(new Action() {
             @Override
