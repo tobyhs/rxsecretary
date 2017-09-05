@@ -18,6 +18,11 @@ public class BaseSchedulerProviderTest {
     private BaseSchedulerProvider provider = new TestProvider();
 
     @Test
+    public void computation() {
+        assertThat(provider.computation(), is(Schedulers.computation()));
+    }
+
+    @Test
     public void io() {
         assertThat(provider.io(), is(Schedulers.io()));
     }

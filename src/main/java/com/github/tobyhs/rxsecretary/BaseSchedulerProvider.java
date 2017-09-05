@@ -10,6 +10,11 @@ import io.reactivex.schedulers.Schedulers;
  */
 public abstract class BaseSchedulerProvider implements SchedulerProvider {
     @Override
+    public Scheduler computation() {
+        return Schedulers.computation();
+    }
+
+    @Override
     public Scheduler io() {
         return Schedulers.io();
     }

@@ -7,6 +7,11 @@ import io.reactivex.Scheduler;
  */
 public interface SchedulerProvider {
     /**
+     * @return scheduler for computational work
+     */
+    Scheduler computation();
+
+    /**
      * @return scheduler for IO-bound work
      */
     Scheduler io();

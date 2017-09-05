@@ -6,8 +6,14 @@ import io.reactivex.schedulers.TestScheduler;
  * A {@link SchedulerProvider} that provides {@link TestScheduler} instances for testing.
  */
 public class TestSchedulerProvider implements SchedulerProvider {
+    private final TestScheduler computationScheduler = new TestScheduler();
     private final TestScheduler ioScheduler = new TestScheduler();
     private final TestScheduler uiScheduler = new TestScheduler();
+
+    @Override
+    public TestScheduler computation() {
+        return computationScheduler;
+    }
 
     @Override
     public TestScheduler io() {
@@ -24,6 +30,7 @@ public class TestSchedulerProvider implements SchedulerProvider {
      */
     public void triggerActions() {
         ioScheduler.triggerActions();
+        computationScheduler.triggerActions();
         uiScheduler.triggerActions();
     }
 }
