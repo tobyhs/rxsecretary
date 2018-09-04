@@ -1,5 +1,7 @@
 # RxSecretary
 
+[![Build Status](https://travis-ci.org/tobyhs/rxsecretary.svg?branch=master)](https://travis-ci.org/tobyhs/rxsecretary)
+
 RxSecretary is a library that helps with scheduler injection (dependency
 injection of RxJava schedulers).
 
