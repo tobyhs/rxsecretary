@@ -1,4 +1,4 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 apply plugin: 'maven'
 
 group = 'com.github.tobyhs'
@@ -12,9 +12,9 @@ repositories {
 }
 
 dependencies {
-    compile 'io.reactivex.rxjava2:rxjava:2.1.1'
+    api 'io.reactivex.rxjava2:rxjava:2.1.1'
 
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }
 
 task sourcesJar(type: Jar) {
