@@ -22,6 +22,6 @@ repositories {
 }
 
 dependencies {
-    compile "com.github.tobyhs:rxsecretary:$rxsecretaryVersion"
+    implementation "com.github.tobyhs:rxsecretary:$rxsecretaryVersion"
 }
 ```
