@@ -1,5 +1,7 @@
-apply plugin: 'java-library'
-apply plugin: 'maven'
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
 
 group = 'com.github.tobyhs'
 version = '0.1.0'
@@ -15,10 +17,18 @@ dependencies {
 }
 
 task sourcesJar(type: Jar) {
-    classifier = 'sources'
+    description = 'Creates a Jar for the source files'
+    archiveClassifier.set('sources')
     from sourceSets.main.allSource
 }
 
-artifacts {
-    archives sourcesJar
+publishing {
+    publications {
+        myLibrary(MavenPublication) {
+            from components.java
+            artifact(sourcesJar) {
+                classifier = 'sources'
+            }
+        }
+    }
 }
