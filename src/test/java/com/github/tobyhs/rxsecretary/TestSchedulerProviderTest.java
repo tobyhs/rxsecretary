@@ -1,9 +1,9 @@
 package com.github.tobyhs.rxsecretary;
 
-import io.reactivex.Completable;
-import io.reactivex.Scheduler;
-import io.reactivex.functions.Action;
-import io.reactivex.schedulers.TestScheduler;
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.schedulers.TestScheduler;
+
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -11,7 +11,7 @@ import static org.hamcrest.CoreMatchers.isA;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TestSchedulerProviderTest {
-    private TestSchedulerProvider provider = new TestSchedulerProvider();
+    private final TestSchedulerProvider provider = new TestSchedulerProvider();
 
     @Test
     public void computation() {
@@ -53,11 +53,6 @@ public class TestSchedulerProviderTest {
             final Scheduler scheduler,
             final String string
     ) {
-        Completable.fromAction(new Action() {
-            @Override
-            public void run() {
-                buffer.append(string);
-            }
-        }).subscribeOn(scheduler).subscribe();
+        Completable.fromAction(() -> buffer.append(string)).subscribeOn(scheduler).subscribe();
     }
 }

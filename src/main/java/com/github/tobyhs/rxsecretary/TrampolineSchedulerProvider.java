@@ -1,7 +1,7 @@
 package com.github.tobyhs.rxsecretary;
 
-import io.reactivex.Scheduler;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
  * A {@link SchedulerProvider} that provides the result of

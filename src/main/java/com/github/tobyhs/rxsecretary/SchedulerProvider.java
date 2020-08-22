@@ -1,6 +1,6 @@
 package com.github.tobyhs.rxsecretary;
 
-import io.reactivex.Scheduler;
+import io.reactivex.rxjava3.core.Scheduler;
 
 /**
  * Interface for an object that provides RxJava schedulers.

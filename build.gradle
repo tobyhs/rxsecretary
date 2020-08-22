@@ -11,9 +11,9 @@ repositories {
 }
 
 dependencies {
-    api 'io.reactivex.rxjava2:rxjava:2.1.1'
+    api 'io.reactivex.rxjava3:rxjava:3.0.6'
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
 }
 
 task sourcesJar(type: Jar) {

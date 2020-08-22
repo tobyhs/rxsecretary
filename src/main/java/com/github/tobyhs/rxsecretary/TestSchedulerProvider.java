@@ -1,6 +1,6 @@
 package com.github.tobyhs.rxsecretary;
 
-import io.reactivex.schedulers.TestScheduler;
+import io.reactivex.rxjava3.schedulers.TestScheduler;
 
 /**
  * A {@link SchedulerProvider} that provides {@link TestScheduler} instances for testing.
