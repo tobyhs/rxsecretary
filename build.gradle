@@ -10,25 +10,21 @@ repositories {
     mavenCentral()
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 dependencies {
     api 'io.reactivex.rxjava3:rxjava:3.0.6'
 
     testImplementation 'junit:junit:4.13.2'
 }
 
-task sourcesJar(type: Jar) {
-    description = 'Creates a Jar for the source files'
-    archiveClassifier.set('sources')
-    from sourceSets.main.allSource
-}
-
 publishing {
     publications {
-        myLibrary(MavenPublication) {
+        maven(MavenPublication) {
             from components.java
-            artifact(sourcesJar) {
-                classifier = 'sources'
-            }
         }
     }
 }
